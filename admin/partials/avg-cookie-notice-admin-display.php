@@ -39,9 +39,9 @@
       <tr>
         <th>Content voor de link naar cookiebeleid pagina:</th>
         <td>
-          <p><strong>URL van de link</strong></p>
-          <input type="text" placeholder="Meer informatie" name="cookie_content_link_text" value="<?php echo esc_attr( get_option('cookie_content_link_text') ); ?>" size="50" />
           <p><strong>Tekst van de link</strong></p>
+          <input type="text" placeholder="Meer informatie" name="cookie_content_link_text" value="<?php echo esc_attr( get_option('cookie_content_link_text') ); ?>" size="50" />
+          <p><strong>URL van de link</strong></p>
           <input type="text" placeholder="/cookiebeleid" name="cookie_content_link_url" value="<?php echo esc_attr( get_option('cookie_content_link_url') ); ?>" size="50" />
         </td>
       </tr>
