@@ -7,6 +7,19 @@ function CookieNotice() {
   var notice = document.querySelector('.js-cookie-notice')
   var deleteButtons = document.querySelectorAll('.js-delete-cookies')
   if (acceptLink && notice) {
+    if (
+      notice.classList.contains('fixed') &&
+      notice.classList.contains('top')
+    ) {
+      document.body.classList.add('bright-avg-cookie-notice-active')
+      document.body.style.marginTop = notice.clientHeight + 'px'
+    } else if (
+      notice.classList.contains('fixed') &&
+      notice.classList.contains('bottom')
+    ) {
+      document.body.classList.add('bright-avg-cookie-notice-active')
+      document.body.style.marginBottom = notice.clientHeight + 'px'
+    }
     var analytics = null
     var tracking = null
     acceptLink.addEventListener('click', function(e) {
@@ -67,6 +80,8 @@ function CookieNotice() {
    * Remove an element from the the dom
    */
   function remove(element) {
+    document.body.style.marginBottom = '0px'
+    document.body.style.marginTop = '0px'
     element.parentNode.removeChild(element)
   }
 }

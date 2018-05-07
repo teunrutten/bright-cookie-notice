@@ -104,5 +104,4 @@ class Avg_Cookie_Notice_Public {
 			include(plugin_dir_path( __FILE__ ) . 'partials/avg-cookie-notice-public-display.php');
 		}
 	}
-
 }
