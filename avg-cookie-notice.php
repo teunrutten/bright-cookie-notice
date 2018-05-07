@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       AVG - Cookie Notice
  * Plugin URI:        https://github.com/teunrutten/cookie-notice
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       This plugin creates a cookie notice with multiple checkboxes, it sets a cookie which can be used in tagmanager or php to include or disallow certain scripts.
  * Version:           1.0.0
  * Author:            Teun Rutten
  * Author URI:        https://github.com/teunrutten/cookie-notice
