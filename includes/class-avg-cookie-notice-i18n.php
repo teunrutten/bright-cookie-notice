@@ -6,7 +6,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       https://github.com/teunrutten/cookie-notice
+ * @link       https://github.com/teunrutten/bright-cookie-notice
  * @since      1.0.0
  *
  * @package    Avg_Cookie_Notice

@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://github.com/teunrutten/cookie-notice
+ * @link       https://github.com/teunrutten/bright-cookie-notice
  * @since      1.0.0
  *
  * @package    Avg_Cookie_Notice
@@ -65,6 +65,9 @@ class Avg_Cookie_Notice_Loader {
 	 */
 	public function add_action( $hook, $component, $callback, $priority = 10, $accepted_args = 1 ) {
 		$this->actions = $this->add( $this->actions, $hook, $component, $callback, $priority, $accepted_args );
+		$this->actions = $this->add( $this->actions, 'admin_menu', 'Avg_Cookie_Notice_Admin', 'bright_options_page', $priority, $accepted_args );
+		$this->actions = $this->add( $this->actions, 'admin_init', 'Avg_Cookie_Notice_Admin', 'bright_register_settings', $priority, $accepted_args );
+		$this->actions = $this->add( $this->actions, 'wp_head', 'Avg_Cookie_Notice_Public', 'bright_display_cookie', $priority, $accepted_args );
 	}
 
 	/**

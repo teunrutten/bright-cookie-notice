@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://github.com/teunrutten/cookie-notice
+ * @link       https://github.com/teunrutten/bright-cookie-notice
  * @since      1.0.0
  *
  * @package    Avg_Cookie_Notice
@@ -98,6 +98,10 @@ class Avg_Cookie_Notice_Public {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/avg-cookie-notice-public.js', array( 'jquery' ), $this->version, false );
 
+	}
+
+	public static function bright_display_cookie() {
+		include(plugin_dir_path( __FILE__ ) . 'partials/avg-cookie-notice-public-display.php');
 	}
 
 }

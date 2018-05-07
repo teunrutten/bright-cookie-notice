@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://github.com/teunrutten/cookie-notice
+ * @link              https://github.com/teunrutten/bright-cookie-notice
  * @since             1.0.0
  * @package           Avg_Cookie_Notice
  *
  * @wordpress-plugin
  * Plugin Name:       AVG - Wordpress Cookie Notice
- * Plugin URI:        https://github.com/teunrutten/cookie-notice
+ * Plugin URI:        https://github.com/teunrutten/bright-cookie-notice
  * Description:       This plugin creates a cookie notice with multiple checkboxes, it sets a cookie which can be used in tagmanager or php to include or disallow certain scripts.
  * Version:           1.0.0
  * Author:            Teun Rutten
- * Author URI:        https://github.com/teunrutten/cookie-notice
+ * Author URI:        https://github.com/teunrutten/bright-cookie-notice
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       avg-cookie-notice

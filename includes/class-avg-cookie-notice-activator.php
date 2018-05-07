@@ -3,7 +3,7 @@
 /**
  * Fired during plugin activation
  *
- * @link       https://github.com/teunrutten/cookie-notice
+ * @link       https://github.com/teunrutten/bright-cookie-notice
  * @since      1.0.0
  *
  * @package    Avg_Cookie_Notice
@@ -30,7 +30,7 @@ class Avg_Cookie_Notice_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-
+		register_setting( 'Bright - cookie instellingen', 'bright_cookie_notice' );
 	}
 
 }

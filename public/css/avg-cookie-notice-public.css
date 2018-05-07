@@ -2,3 +2,146 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+
+/**
+ * Cookie component
+ *
+ * @since 1.0.0
+ */
+
+.c-cookie-notice {
+  width: 100%;
+  text-align: left;
+  z-index: 11;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 1rem;
+}
+
+.c-cookie-notice__content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.2;
+  width: 97.5%;
+}
+
+.c-cookie-notice__links {
+  margin-top: 2rem;
+}
+
+.c-cookie-notice__link {
+  transition: all 0.5s;
+  text-decoration: underline;
+  width: auto;
+  display: inline;
+}
+
+.c-cookie-notice__text {
+  margin-bottom: 1rem;
+}
+
+.c-cookie-notice__input-bar {
+  margin-top: 1rem;
+}
+
+.c-cookie-notice-checbox {
+  margin-right: 1.5rem;
+}
+
+.c-cookie-notice-checbox:last-child {
+  margin-right: 0;
+}
+
+.c-cookie-notice__confirmation {
+  transition: all 0.5s;
+  padding: 0.5rem 0.75rem;
+  margin-left: 1rem;
+  font-weight: 600;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.c-cookie-notice__icon {
+  transition: transform 0.5s;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+.c-cookie-notice__confirmation:hover .c-cookie-notice__icon {
+  transform: translateX(0.25rem);
+}
+
+.c-cookie-notice-checbox {
+  display: inline-block;
+}
+.c-cookie-notice-checbox__element {
+  position: relative;
+  display: none;
+}
+.c-cookie-notice-checbox__element:checked
+  + .c-cookie-notice-checbox__label::after {
+  display: block;
+}
+.c-cookie-notice-checbox__element:disabled
+  + .c-cookie-notice-checbox__label::after {
+  color: black;
+}
+.c-cookie-notice-checbox__label {
+  position: relative;
+  cursor: pointer;
+  font-weight: 200;
+  padding-left: 1.75rem;
+  user-select: none;
+}
+.c-cookie-notice-checbox__label::before {
+  width: 1.15rem;
+  height: 1.15rem;
+  position: absolute;
+  content: '';
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 0.25rem;
+  left: 0;
+}
+.c-cookie-notice-checbox__label::after {
+  position: absolute;
+  content: '✔';
+  color: inherit;
+  line-height: 1;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  /* Edge */
+}
+@supports (-ms-ime-align: auto) {
+  .c-cookie-notice-checbox__label::after {
+    left: 0;
+    top: 30%;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .c-cookie-notice {
+    padding: 1rem;
+  }
+  .c-cookie-notice__checkbox-label::before {
+    width: 1rem;
+    height: 1rem;
+  }
+  .c-cookie-notice__checkbox-label::after {
+  }
+  .c-cookie-notice__checkbox {
+    margin-right: 1rem;
+  }
+  .c-cookie-notice__content {
+    line-height: 1.5;
+  }
+  .c-cookie-notice__confirmation {
+    margin-top: 1rem;
+    display: inline-block;
+    margin-left: 0;
+  }
+}

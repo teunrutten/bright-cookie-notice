@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://github.com/teunrutten/cookie-notice
+ * @link       https://github.com/teunrutten/bright-cookie-notice
  * @since      1.0.0
  *
  * @package    Avg_Cookie_Notice
@@ -74,7 +74,7 @@ class Avg_Cookie_Notice_Admin {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/avg-cookie-notice-admin.css', array(), $this->version, 'all' );
-
+		wp_enqueue_style( 'wp-color-picker' );
 	}
 
 	/**
@@ -96,8 +96,59 @@ class Avg_Cookie_Notice_Admin {
 		 * class.
 		 */
 
+		wp_enqueue_script( 'wp-color-picker');
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/avg-cookie-notice-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
+
+	/**
+	 * Register the options page for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public static function bright_options_page() {
+		add_options_page( 'Bright - Cookie instellingen', 'Bright - AVG Wordpress Cookie Notice', 'manage_options', 'avg-cookie-notice', function() {
+			include(plugin_dir_path( __FILE__ ) . 'partials/avg-cookie-notice-admin-display.php');
+		} );
+	}
+
+	/**
+	 * Register the settings.
+	 *
+	 * @since    1.0.0
+	 */
+	public static function bright_register_settings() {
+		// Text placed in the cookie notice
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_content' );
+
+		// Link and text for the cookie content page
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_link_url' );
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_link_text' );
+
+		// Small line of text above the checkboxes
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_checkbox_intro' );
+
+		// Text of the confirmation button
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_confirmation' );
+
+		// Check if all checkboxes should be shown
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_necessary' );
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_analytics' );
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_tracking' );
+
+		// Uitlijning
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_align' );
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_position' );
+
+		// Stijl
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_font_size' );
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_background_color' );
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_content_color' );
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_check_color' );
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_check_background_color' );
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_button_color' );
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_button_text_color' );
+	}
+
 
 }
