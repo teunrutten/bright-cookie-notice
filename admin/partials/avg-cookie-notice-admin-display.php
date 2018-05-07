@@ -19,6 +19,11 @@
   <p>Met de onderstaande instellingen kunnen de stijl en content voor de cookiemelding bepaald worden.</p>
   <p>Je kan een link maken waarmee je de cookie instellingen kan wijzigen, deze moet de volgende class bevatten: <strong>'js-delete-cookies'</strong></p>
   <p>Plaats het volgende PHP script net onder de openende body tag: <strong>do_action('after_body');</strong></p>
+  <?php if (has_action('after_body')) { ?>
+    <p><strong>Het thema heeft een 'after_body' action, de positie zal goed ingesteld worden</strong></p>
+  <?php } else { ?>
+    <p><strong style="color: red;">Het thema heeft geen 'after_body' action, de positie zal niet ingesteld worden, voeg het volgende php script net na de body tag toe: do_action('after_body');</strong></p>
+  <?php } ?>
   <form method="post" action="options.php">
     <?php
       settings_fields( 'bright-cookie-notice-settings' );

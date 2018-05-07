@@ -70,7 +70,7 @@ class Avg_Cookie_Notice_Loader {
 
 		// Check if cookie should be loaded in the header or footer
 		$align = get_option('cookie_content_align');
-		if ($align === 'bottom') {
+		if ($align === 'bottom' && has_action('after_body')) {
 			$this->actions = $this->add( $this->actions, 'wp_footer', 'Avg_Cookie_Notice_Public', 'bright_display_cookie', $priority, $accepted_args );
 		} else {
 			$this->actions = $this->add( $this->actions, 'after_body', 'Avg_Cookie_Notice_Public', 'bright_display_cookie', $priority, $accepted_args );
