@@ -32,6 +32,10 @@ $font_size = esc_attr( get_option('cookie_content_font_size') );
 $position = esc_attr( get_option('cookie_content_position') );
 $align = esc_attr( get_option('cookie_content_align') );
 
+$necessary = esc_attr( get_option('cookie_content_necessary') );
+$tracking = esc_attr( get_option('cookie_content_tracking') );
+$analytics = esc_attr( get_option('cookie_content_analytics') );
+
 if (isset( $_COOKIE['bright_avg_cookie_consent'] )) { return; }
 ?>
 
@@ -74,18 +78,24 @@ if (isset( $_COOKIE['bright_avg_cookie_consent'] )) { return; }
     <a href="<?php echo $url; ?>" class="c-cookie-notice__link"><?php echo $url_text; ?></a>
     <div class='c-cookie-notice__input-bar'>
       <div class='c-cookie-notice__text'><?php echo $intro  ?></div>
-      <div class="c-cookie-notice-checbox" style="color: <?php echo $check_color; ?>">
-        <input type="checkbox" name="normal_cookies" value="true" disabled checked="checked" id="normal_cookies" class="c-cookie-notice-checbox__element">
-        <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="normal_cookies">Noodzakelijk</label>
-      </div>
-      <div class="c-cookie-notice-checbox" style="color: <?php echo $check_color; ?>">
-        <input type="checkbox" name="analytics" value="true" checked="checked" id="analytics" class="c-cookie-notice-checbox__element">
-        <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="analytics">Analytics</label>
-      </div>
-      <div class="c-cookie-notice-checbox" style="color: <?php echo $check_color; ?>">
-        <input type="checkbox" name="tracking" value="true" checked="checked" id="tracking" class="c-cookie-notice-checbox__element">
-        <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="tracking">Tracking</label>
-      </div>
+      <?php if ($necessary === 'on') { ?>
+        <div class="c-cookie-notice-checbox" style="color: <?php echo $check_color; ?>">
+          <input type="checkbox" name="normal_cookies" value="true" disabled checked="checked" id="normal_cookies" class="c-cookie-notice-checbox__element">
+          <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="normal_cookies">Noodzakelijk</label>
+        </div>
+      <?php } ?>
+      <?php if ($analytics === 'on') { ?>
+        <div class="c-cookie-notice-checbox" style="color: <?php echo $check_color; ?>">
+          <input type="checkbox" name="analytics" value="true" checked="checked" id="analytics" class="c-cookie-notice-checbox__element">
+          <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="analytics">Analytics</label>
+        </div>
+      <?php } ?>
+      <?php if ($tracking === 'on') { ?>
+        <div class="c-cookie-notice-checbox" style="color: <?php echo $check_color; ?>">
+          <input type="checkbox" name="tracking" value="true" checked="checked" id="tracking" class="c-cookie-notice-checbox__element">
+          <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="tracking">Tracking</label>
+        </div>
+      <?php } ?>
       <a href="#" class="c-cookie-notice__confirmation js-confirm-cookies">
         <?php echo $confirmation ?>
         <svg class="c-cookie-notice__icon" id="chevron-right" viewBox="-19522.426 2174.602 11.109 16.426" width="0.75rem" height="0.75rem"><g transform="translate(-19560 1581)" id="Repeat_Grid_1" data-name="Repeat Grid 1" class="chevron-2"><path id="Path_25598" data-name="Path 25598" class="chevron-3" d="M1.983 0L-.855 2.838l5.4 5.377-5.37 5.373 2.838 2.838 5.4-5.377 2.838-2.834-2.835-2.838z" transform="translate(38.43 593.602)"></path></g></svg>
