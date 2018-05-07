@@ -67,7 +67,14 @@ class Avg_Cookie_Notice_Loader {
 		$this->actions = $this->add( $this->actions, $hook, $component, $callback, $priority, $accepted_args );
 		$this->actions = $this->add( $this->actions, 'admin_menu', 'Avg_Cookie_Notice_Admin', 'bright_options_page', $priority, $accepted_args );
 		$this->actions = $this->add( $this->actions, 'admin_init', 'Avg_Cookie_Notice_Admin', 'bright_register_settings', $priority, $accepted_args );
-		$this->actions = $this->add( $this->actions, 'wp_head', 'Avg_Cookie_Notice_Public', 'bright_display_cookie', $priority, $accepted_args );
+
+		// Check if cookie should be loaded in the header or footer
+		$align = get_option('cookie_content_align');
+		if ($align === 'bottom') {
+			$this->actions = $this->add( $this->actions, 'wp_footer', 'Avg_Cookie_Notice_Public', 'bright_display_cookie', $priority, $accepted_args );
+		} else {
+			$this->actions = $this->add( $this->actions, 'after_body', 'Avg_Cookie_Notice_Public', 'bright_display_cookie', $priority, $accepted_args );
+		}
 	}
 
 	/**

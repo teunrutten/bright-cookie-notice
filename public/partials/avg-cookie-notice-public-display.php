@@ -29,11 +29,15 @@ $check_background_color = esc_attr( get_option('cookie_content_check_background_
 $button_color = esc_attr( get_option('cookie_content_button_text_color') );
 $button_background_color = esc_attr( get_option('cookie_content_button_color') );
 $font_size = esc_attr( get_option('cookie_content_font_size') );
+$position = esc_attr( get_option('cookie_content_position') );
+$align = esc_attr( get_option('cookie_content_align') );
+
+// if (isset( $_COOKIE['bright_avg_cookie_consent'] )) { return; }
 ?>
 
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-<section class="c-cookie-notice js-cookie-notice" style="background-color:<?php echo $background  ?>; color:<?php echo $color; ?>">
+<section class="c-cookie-notice js-cookie-notice <?php echo $position ?> <?php echo $align ?>" style="background-color:<?php echo $background  ?>; color:<?php echo $color; ?>">
   <style>
     .c-cookie-notice {
       font-size: <?php echo $font_size; ?>;

@@ -95,9 +95,8 @@ class Avg_Cookie_Notice_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/avg-cookie-notice-public.js', array( 'jquery' ), $this->version, false );
-
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/avg-cookie-notice-public.js', array(), $this->version, false );
+		wp_enqueue_script( 'js-cookie', 'https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js', array(), $this->version, false );
 	}
 
 	public static function bright_display_cookie() {

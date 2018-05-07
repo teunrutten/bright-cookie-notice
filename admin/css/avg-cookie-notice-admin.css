@@ -3,20 +3,20 @@
  * included in this file.
  */
 
-form {
+.cookie-notice-wrap form {
   margin: 2rem 0;
   display: flex;
   padding-top: 2rem;
 }
 
-.flex {
+.cookie-notice-wrap .flex {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-caption {
+.cookie-notice-wrap caption {
   width: 100%;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
@@ -25,7 +25,7 @@ caption {
   border-bottom: 1px solid black;
 }
 
-th {
+.cookie-notice-wrap th {
   font-size: 18px;
   text-align: left;
   font-weight: 300;
@@ -39,7 +39,7 @@ th {
   padding-left: 0;
 }
 
-td {
+.cookie-notice-wrap td {
   padding: 1rem;
   padding-left: 0;
   padding-top: 0;
@@ -47,34 +47,39 @@ td {
   display: block;
 }
 
-table {
+.cookie-notice-wrap table {
   border: 0;
   border-collapse: separate;
   width: 100%;
 }
 
 @media screen and (min-width: 800px) {
-  table {
+  .cookie-notice-wrap table {
     width: calc(50% - 2rem);
   }
 }
 
-tbody {
+.cookie-notice-wrap tbody {
   border-collapse: inherit;
 }
 
-tr {
+.cookie-notice-wrap tr {
   display: block;
 }
 
-input,
-textarea {
+.cookie-notice-wrap input[type='text'],
+.cookie-notice-wrap textarea {
   border-radius: 0.25rem;
   padding: 0.75rem 1rem;
   width: 100%;
 }
 
-p {
+.cookie-notice-wrap input {
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+
+.cookie-notice-wrap p {
   margin: 0;
   margin-top: 1rem;
 }

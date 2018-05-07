@@ -14,9 +14,11 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-<div class="wrap">
+<div class="wrap cookie-notice-wrap">
   <h1>AVG - Cookie notice</h1>
   <p>Met de onderstaande instellingen kunnen de stijl en content voor de cookiemelding bepaald worden.</p>
+  <p>Je kan een link maken waarmee je de cookie instellingen kan wijzigen, deze moet de volgende class bevatten: <strong>'js-delete-cookies'</strong></p>
+  <p>Plaats het volgende PHP script net onder de openende body tag: <strong>do_action('after_body');</strong></p>
   <form method="post" action="options.php">
     <?php
       settings_fields( 'bright-cookie-notice-settings' );
@@ -76,7 +78,6 @@
         <td>
           <select name="cookie_content_align">
             <option value="top" <?php echo esc_attr( get_option('cookie_content_align') ) == 'top' ? 'selected="selected"' : ''; ?>>Boven</option>
-            <option value="center" <?php echo esc_attr( get_option('cookie_content_align') ) == 'center' ? 'selected="selected"' : ''; ?>>Gecentreerd</option>
             <option value="bottom" <?php echo esc_attr( get_option('cookie_content_align') ) == 'bottom' ? 'selected="selected"' : ''; ?>>Onder</option>
           </select>
         </td>
