@@ -32,7 +32,7 @@ $font_size = esc_attr( get_option('cookie_content_font_size') );
 $position = esc_attr( get_option('cookie_content_position') );
 $align = esc_attr( get_option('cookie_content_align') );
 
-// if (isset( $_COOKIE['bright_avg_cookie_consent'] )) { return; }
+if (isset( $_COOKIE['bright_avg_cookie_consent'] )) { return; }
 ?>
 
 

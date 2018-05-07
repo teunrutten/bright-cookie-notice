@@ -100,7 +100,9 @@ class Avg_Cookie_Notice_Public {
 	}
 
 	public static function bright_display_cookie() {
-		include(plugin_dir_path( __FILE__ ) . 'partials/avg-cookie-notice-public-display.php');
+		if(!isset( $_COOKIE['bright_avg_cookie_consent'] )) {
+			include(plugin_dir_path( __FILE__ ) . 'partials/avg-cookie-notice-public-display.php');
+		}
 	}
 
 }
