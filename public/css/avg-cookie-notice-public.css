@@ -104,7 +104,7 @@ body.admin-bar .c-cookie-notice.fixed.top {
 }
 .c-cookie-notice-checbox__element:disabled
   + .c-cookie-notice-checbox__label::after {
-  color: black;
+  color: #afafaf;
 }
 .c-cookie-notice-checbox__label {
   position: relative;
