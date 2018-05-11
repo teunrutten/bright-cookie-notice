@@ -38,20 +38,20 @@ function CookieNotice() {
               'bright_avg_cookie_consent',
               'analytics_tracking',
               {
-                expires: 7
+                expires: 365
               }
             )
           } else if (analytics) {
             window.Cookies.set('bright_avg_cookie_consent', 'analytics', {
-              expires: 7
+              expires: 365
             })
           } else if (tracking) {
             window.Cookies.set('bright_avg_cookie_consent', 'tracking', {
-              expires: 7
+              expires: 365
             })
           } else {
             window.Cookies.set('bright_avg_cookie_consent', 'none', {
-              expires: 7
+              expires: 365
             })
           }
           if (window.Cookies.get('bright_avg_cookie_consent')) {
