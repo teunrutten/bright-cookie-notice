@@ -67,8 +67,8 @@ class Avg_Cookie_Notice {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-			$this->version = PLUGIN_NAME_VERSION;
+		if ( defined( 'AVG_COOKIE_NOTICE_PLUGIN' ) ) {
+			$this->version = AVG_COOKIE_NOTICE_PLUGIN;
 		} else {
 			$this->version = '1.0.0';
 		}
