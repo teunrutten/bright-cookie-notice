@@ -43,7 +43,7 @@ function CookieNotice() {
             )
           } else if (analytics) {
             window.Cookies.set('bright_avg_cookie_consent', 'analytics', {
-              expires: 365
+              expires: 1
             })
           } else if (tracking) {
             window.Cookies.set('bright_avg_cookie_consent', 'tracking', {
@@ -51,7 +51,7 @@ function CookieNotice() {
             })
           } else {
             window.Cookies.set('bright_avg_cookie_consent', 'none', {
-              expires: 365
+              expires: 1
             })
           }
           if (window.Cookies.get('bright_avg_cookie_consent')) {
