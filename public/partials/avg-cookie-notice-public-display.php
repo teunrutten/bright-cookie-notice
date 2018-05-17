@@ -86,7 +86,7 @@ if (isset( $_COOKIE['bright_avg_cookie_consent'] )) { return; }
       <?php if ($analytics === 'on') { ?>
         <div class="c-cookie-notice-checbox" style="color: <?php echo $check_color; ?>">
           <input type="checkbox" name="analytics" value="true" checked="checked" id="analytics" class="c-cookie-notice-checbox__element">
-          <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="analytics">Analytics</label>
+          <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="analytics">Analytisch</label>
         </div>
       <?php } ?>
       <?php if ($tracking === 'on') { ?>
