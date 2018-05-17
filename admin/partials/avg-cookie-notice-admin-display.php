@@ -64,6 +64,17 @@
           </label>
         </td>
       </tr>
+      <tr>
+        <th>Benaming cookies:</th>
+        <td>
+          <p><strong>Noodzakelijke cookies</strong></p>
+          <input type="text" placeholder="Noodzakelijk" name="cookie_content_necessary_name" value="<?php echo esc_attr( get_option('cookie_content_necessary_name') ); ?>" size="50" /><br>
+          <p><strong>Analytische cookies</strong></p>
+          <input type="text" placeholder="Analytisch" name="cookie_content_analytics_name" value="<?php echo esc_attr( get_option('cookie_content_analytics_name') ); ?>" size="50" /><br>
+          <p><strong>Tracking cookies</strong></p>
+          <input type="text" placeholder="Tracking" name="cookie_content_tracking_name" value="<?php echo esc_attr( get_option('cookie_content_tracking_name') ); ?>" size="50" /><br>
+        </td>
+      </tr>
     </table>
     <table>
       <caption>Stijl</caption>

@@ -35,6 +35,10 @@ $necessary = esc_attr( get_option('cookie_content_necessary') );
 $tracking = esc_attr( get_option('cookie_content_tracking') );
 $analytics = esc_attr( get_option('cookie_content_analytics') );
 
+$necessary_name = (esc_attr( get_option('cookie_content_necessary_name') ) !== '') ? esc_attr( get_option('cookie_content_necessary_name') ) : 'Noodzakelijk';
+$tracking_name = (esc_attr( get_option('cookie_content_tracking_name') ) !== '') ? esc_attr( get_option('cookie_content_tracking_name') ) : 'Tracking';
+$analytics_name = (esc_attr( get_option('cookie_content_analytics_name') ) !== '') ? esc_attr( get_option('cookie_content_analytics_name') ) : 'Analytisch';
+
 if (isset( $_COOKIE['bright_avg_cookie_consent'] )) { return; }
 ?>
 
@@ -80,19 +84,19 @@ if (isset( $_COOKIE['bright_avg_cookie_consent'] )) { return; }
       <?php if ($necessary === 'on') { ?>
         <div class="c-cookie-notice-checbox" style="color: <?php echo $check_color; ?>">
           <input type="checkbox" name="normal_cookies" value="true" disabled checked="checked" id="normal_cookies" class="c-cookie-notice-checbox__element">
-          <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="normal_cookies">Noodzakelijk</label>
+          <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="normal_cookies"><?php echo $necessary_name; ?></label>
         </div>
       <?php } ?>
       <?php if ($analytics === 'on') { ?>
         <div class="c-cookie-notice-checbox" style="color: <?php echo $check_color; ?>">
           <input type="checkbox" name="analytics" value="true" checked="checked" id="analytics" class="c-cookie-notice-checbox__element">
-          <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="analytics">Analytisch</label>
+          <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="analytics"><?php echo $analytics_name; ?></label>
         </div>
       <?php } ?>
       <?php if ($tracking === 'on') { ?>
         <div class="c-cookie-notice-checbox" style="color: <?php echo $check_color; ?>">
           <input type="checkbox" name="tracking" value="true" checked="checked" id="tracking" class="c-cookie-notice-checbox__element">
-          <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="tracking">Tracking</label>
+          <label class="c-cookie-notice-checbox__label" style="color: <?php echo $color; ?>" for="tracking"><?php echo $tracking_name; ?></label>
         </div>
       <?php } ?>
       <a href="#" class="c-cookie-notice__confirmation js-confirm-cookies">

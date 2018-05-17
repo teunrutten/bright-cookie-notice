@@ -136,6 +136,10 @@ class Avg_Cookie_Notice_Admin {
 		register_setting( 'bright-cookie-notice-settings', 'cookie_content_analytics' );
 		register_setting( 'bright-cookie-notice-settings', 'cookie_content_tracking' );
 
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_necessary_name' );
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_analytics_name' );
+		register_setting( 'bright-cookie-notice-settings', 'cookie_content_tracking_name' );
+
 		// Uitlijning
 		register_setting( 'bright-cookie-notice-settings', 'cookie_content_align' );
 		register_setting( 'bright-cookie-notice-settings', 'cookie_content_position' );
