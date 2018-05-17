@@ -22,8 +22,14 @@ function CookieNotice() {
     }
     var analytics = null
     var tracking = null
+    if (!window.Cookies.get('bright_avg_cookie_consent')) {
+      window.Cookies.set('bright_avg_no_cookie', 'no_cookie', { expires: 365 })
+    }
     acceptLink.addEventListener('click', function(e) {
       e.preventDefault()
+      if (window.Cookies.get('bright_avg_no_cookie')) {
+        window.Cookies.remove('bright_avg_no_cookie')
+      }
       var inputs = notice.querySelectorAll('input')
       ;[...inputs].forEach(function(input, index) {
         if (input.name === 'tracking') {
