@@ -14,9 +14,8 @@
 
  $cookie_settings = get_option('bright-cookie-notice-settings');
 
-if (get_option('cookie_content_content') === '') {return;}
-
 $content = esc_attr( get_option('cookie_content_content') );
+if ($content === '') { return; }
 $url = esc_attr( get_option('cookie_content_link_url') );
 $url_text = esc_attr( get_option('cookie_content_link_text') );
 $intro = esc_attr( get_option('cookie_content_checkbox_intro') );
