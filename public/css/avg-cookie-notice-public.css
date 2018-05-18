@@ -53,6 +53,9 @@ body.admin-bar .c-cookie-notice.fixed.top {
   width: auto;
   display: inline;
 }
+.c-cookie-notice__link:hover {
+  text-decoration: none;
+}
 
 .c-cookie-notice__text {
   margin-bottom: 1rem;

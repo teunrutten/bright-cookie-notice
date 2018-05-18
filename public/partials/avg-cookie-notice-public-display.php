@@ -63,7 +63,7 @@ if (isset( $_COOKIE['bright_avg_cookie_consent'] )) { return; }
       color: <?php echo $color; ?>;
     }
     .c-cookie-notice__link:hover {
-      color: <?php echo $button_color; ?>;
+      color: <?php echo $color; ?>;
     }
     .c-cookie-notice-checbox__label::after {
       color: <?php echo $check_color; ?>;
