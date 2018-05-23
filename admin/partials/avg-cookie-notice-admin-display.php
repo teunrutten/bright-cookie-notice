@@ -116,7 +116,7 @@
       </tr>
       <tr>
         <th>Achtergrond van de vinkjes:</th>
-        <td><input class="color-field" data-default-color="#e3ba00" type="text" name="cookie_content_check_background_color" value="<?php echo esc_attr( get_option('cookie_content_check_background_color ') ); ?>"/></td>
+        <td><input class="color-field" data-default-color="#fff" type="text" name="cookie_content_check_background_color" value="<?php echo esc_attr( get_option('cookie_content_check_background_color ') ); ?>"/></td>
       </tr>
       <tr>
         <th>Achtergrondkleur knop:</th>
