@@ -1,3 +1,11 @@
+/**
+ * Polyfill for Array.from
+ * Source: developer.mozilla(.)org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+ * Production steps of ECMA-262, Edition 6, 22.1.2.1
+ */
+Array.from||(Array.from=function(){var r=Object.prototype.toString,t=function(t){return"function"==typeof t||"[object Function]"===r.call(t)},n=Math.pow(2,53)-1,e=function(r){var t,e=(t=Number(r),isNaN(t)?0:0!==t&&isFinite(t)?(t>0?1:-1)*Math.floor(Math.abs(t)):t);return Math.min(Math.max(e,0),n)};return function(r){var n=Object(r);if(null==r)throw new TypeError("Array.from requires an array-like object - not null or undefined");var o,a=arguments.length>1?arguments[1]:void 0;if(void 0!==a){if(!t(a))throw new TypeError("Array.from: when provided, the second argument must be a function");arguments.length>2&&(o=arguments[2])}for(var i,u=e(n.length),f=t(this)?Object(new this(u)):new Array(u),c=0;c<u;)i=n[c],f[c]=a?void 0===o?a(i,c):a.call(o,i,c):i,c+=1;return f.length=u,f}}());
+// End polyfill
+
 document.addEventListener('DOMContentLoaded', function() {
   CookieNotice()
 })
@@ -31,7 +39,7 @@ function CookieNotice() {
         window.Cookies.remove('bright_avg_no_cookie')
       }
       var inputs = notice.querySelectorAll('input')
-      ;[...inputs].forEach(function(input, index) {
+      Array.from(inputs).forEach(function(input, index) {
         if (input.name === 'tracking') {
           tracking = input.checked
         }
@@ -70,12 +78,12 @@ function CookieNotice() {
   }
 
   if (deleteButtons.length) {
-    ;[...deleteButtons].forEach(function(deleteButton) {
+    Array.from(deleteButtons).forEach(function(deleteButton) {
       deleteButton.addEventListener('click', function(e) {
         e.preventDefault()
         if (window.Cookies.get('bright_avg_cookie_consent')) {
           window.Cookies.remove('bright_avg_cookie_consent')
-          window.location = window.location.href + '#top'
+          window.location = window.location.href
           window.location.reload()
         }
       })
