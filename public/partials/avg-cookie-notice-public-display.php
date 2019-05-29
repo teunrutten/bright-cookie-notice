@@ -73,7 +73,7 @@ if (isset( $_COOKIE['bright_avg_cookie_consent'] )) { return; }
     }
     .c-cookie-notice-checbox__element:checked + .c-cookie-notice-checbox__label::before {
       background: <?php echo $check_background_color; ?>;
-      border: border: 1px solid <?php echo $check_background_color; ?>;
+      border: 1px solid <?php echo $check_background_color; ?>;
     }
   </style>
   <article class="c-cookie-notice__content">
